@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Kgaugelo Furniture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!--This is my Navigation part -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-couch text-2xl text-amber-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">KgaugeloLiving</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="index.html" class="text-gray-800 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="shop.html" class="text-gray-800 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">Shop</a>
+                        <a href="contact.html" class="text-gray-800 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        <div class="relative">
+                            <a href="#" id="cart-icon" class="text-gray-800 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span id="cart-count" class="cart-count hidden">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-800 hover:text-amber-600 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- This is my Mobile menu part-->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-800 hover:text-amber-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="shop.html" class="text-gray-800 hover:text-amber-600 block px-3 py-2 rounded-md text-base font-medium">Shop</a>
+                <a href="contact.html" class="text-gray-800 hover:text-amber-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="#" class="text-gray-800 hover:text-amber-600 block px-3 py-2 rounded-md text-base font-medium">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                    <span id="mobile-cart-count" class="cart-count hidden">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="cart-dropdown" class="hidden absolute right-0 mt-2 w-72 bg-white rounded-md shadow-lg z-50">
+        <div class="p-4">
+            <h3 class="text-lg font-medium text-gray-800">Your Cart</h3>
+            <div id="cart-items" class="mt-4 space-y-4">
+                <p class="text-gray-500 text-center py-4">Your cart is empty</p>
+            </div>
+            <div class="mt-4 border-t pt-4">
+                <div class="flex justify-between">
+                    <span class="font-medium">Total:</span>
+                    <span id="cart-total" class="font-bold">R0.00</span>
+                </div>
+                <button class="mt-4 w-full bg-amber-600 text-white py-2 rounded-md hover:bg-amber-700 transition">Checkout</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Now here is my Shop Page Content -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Our Furniture Collection</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover pieces that will transform your home</p>
+            </div>
+            
+            <div class="flex justify-center mb-8">
+                <div class="flex space-x-2 overflow-x-auto pb-2">
+                    <button class="category-btn px-4 py-2 rounded-full bg-amber-600 text-white" data-category="all">All</button>
+                    <button class="category-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition" data-category="living-room">Living Room</button>
+                    <button class="category-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition" data-category="bedroom">Bedroom</button>
+                    <button class="category-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition" data-category="dining-room">Dining Room</button>
+                    <button class="category-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition" data-category="office">Office</button>
+                </div>
+            </div>
+            
+            <div id="living-room" class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-b pb-2">Living Room Furniture</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- My first Product  -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="living-room">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Sofa" class="w-full h-64 object-cover">
+                            <span class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">Bestseller</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Modern Sofa</h3>
+                            <p class="text-gray-600 mb-4">Plush comfort meets contemporary design in this elegant sofa</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R899.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="1" data-name="Modern Sofa" data-price="899.99" data-image="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="living-room">
+                        <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1065&q=80" alt="Leather Armchair" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Leather Armchair</h3>
+                            <p class="text-gray-600 mb-4">Premium leather with timeless design for your living space</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R499.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="2" data-name="Leather Armchair" data-price="499.99" data-image="https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1065&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="living-room">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Coffee Table" class="w-full h-64 object-cover">
+                            <span class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">Eco-Friendly</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Coffee Table</h3>
+                            <p class="text-gray-600 mb-4">Solid wood table with minimalist design and ample surface</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R299.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="3" data-name="Coffee Table" data-price="299.99" data-image="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="bedroom" class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-b pb-2">Bedroom Furniture</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Product 4 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="bedroom">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="King Size Bed" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">King Size Bed</h3>
+                            <p class="text-gray-600 mb-4">Luxurious bed frame with upholstered headboard</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R1,299.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="4" data-name="King Size Bed" data-price="1299.99" data-image="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 5 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="bedroom">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Nightstand" class="w-full h-64 object-cover">
+                            <span class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">New</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Nightstand</h3>
+                            <p class="text-gray-600 mb-4">Compact storage with drawer and open shelf</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R199.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="5" data-name="Nightstand" data-price="199.99" data-image="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 6 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="bedroom">
+                        <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Dresser" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Dresser</h3>
+                            <p class="text-gray-600 mb-4">Six-drawer dresser with ample storage space</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R599.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="6" data-name="Dresser" data-price="599.99" data-image="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="dining-room" class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-b pb-2">Dining Room Furniture</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Product 7 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="dining-room">
+                        <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80" alt="Dining Table" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Dining Table</h3>
+                            <p class="text-gray-600 mb-4">Extendable table seats 6-10 people with leaf</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R799.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="7" data-name="Dining Table" data-price="799.99" data-image="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 8 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="dining-room">
+                        <img src="https://images.unsplash.com/photo-1600494603989-9650cf5e236d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80" alt="Dining Chairs (Set of 4)" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Dining Chairs (Set of 4)</h3>
+                            <p class="text-gray-600 mb-4">Elegant upholstered chairs with wooden legs</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R499.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="8" data-name="Dining Chairs (Set of 4)" data-price="499.99" data-image="https://images.unsplash.com/photo-1600494603989-9650cf5e236d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 9 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="dining-room">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Buffet Cabinet" class="w-full h-64 object-cover">
+                            <span class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">Sale</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Buffet Cabinet</h3>
+                            <p class="text-gray-600 mb-4">Storage solution with glass doors and drawers</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R699.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="9" data-name="Buffet Cabinet" data-price="699.99" data-image="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="office" class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 border-b pb-2">Office Furniture</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Product 10 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="office">
+                        <img src="https://images.unsplash.com/photo-1518455022959-b9f1e69e5e0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Executive Desk" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Executive Desk</h3>
+                            <p class="text-gray-600 mb-4">Spacious work surface with file drawers</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R899.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="10" data-name="Executive Desk" data-price="899.99" data-image="https://images.unsplash.com/photo-1518455022959-b9f1e69e5e0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 11 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="office">
+                        <img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Office Chair" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Office Chair</h3>
+                            <p class="text-gray-600 mb-4">Ergonomic design with adjustable height and lumbar support</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R349.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="11" data-name="Office Chair" data-price="349.99" data-image="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 12 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md card-hover product-card" data-category="office">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1585634917202-6f03b28fc6d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bookshelf" class="w-full h-64 object-cover">
+                            <span class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded">Popular</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Bookshelf</h3>
+                            <p class="text-gray-600 mb-4">Five-shelf unit with adjustable shelves</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-800">R249.99</span>
+                                <button class="add-to-cart bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition" data-id="12" data-name="Bookshelf" data-price="249.99" data-image="https://images.unsplash.com/photo-1585634917202-6f03b28fc6d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Here is my Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">LuxeLiving</h3>
+                    <p class="text-gray-400">Premium furniture for modern lifestyles. Quality craftsmanship meets contemporary design.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="shop.html#living-room" class="text-gray-400 hover:text-white transition">Living Room</a></li>
+                        <li><a href="shop.html#bedroom" class="text-gray-400 hover:text-white transition">Bedroom</a></li>
+                        <li><a href="shop.html#dining-room" class="text-gray-400 hover:text-white transition">Dining Room</a></li>
+                        <li><a href="shop.html#office" class="text-gray-400 hover:text-white transition">Office</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <p class="text-gray-400">Subscribe to our newsletter</p>
+                    <div class="mt-2 flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-700 text-white rounded-l focus:outline-none w-full">
+                        <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-r transition">→</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 KgaugeloLiving. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Shipping Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
