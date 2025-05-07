@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Kgaugelo Furniture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans bg-gray-50">
+
+    <!-- This is my Navigation part -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-couch text-2xl text-amber-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">KgaugeloLiving</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="index.html" class="text-gray-800 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="shop.html" class="text-gray-800 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">Shop</a>
+                        <a href="services.html" class="text-gray-800 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="contact.html" class="text-gray-800 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        <div class="relative">
+                            <a href="#" id="cart-icon" class="text-gray-800 hover:text-amber-600 px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span id="cart-count" class="cart-count hidden">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-800 hover:text-amber-600 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-800 hover:text-amber-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="shop.html" class="text-gray-800 hover:text-amber-600 block px-3 py-2 rounded-md text-base font-medium">Shop</a>
+                <a href="services.html" class="text-gray-800 hover:text-amber-600 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="contact.html" class="text-gray-800 hover:text-amber-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="#" class="text-gray-800 hover:text-amber-600 block px-3 py-2 rounded-md text-base font-medium">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                    <span id="mobile-cart-count" class="cart-count hidden">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="cart-dropdown" class="hidden absolute right-0 mt-2 w-72 bg-white rounded-md shadow-lg z-50">
+        <div class="p-4">
+            <h3 class="text-lg font-medium text-gray-800">Your Cart</h3>
+            <div id="cart-items" class="mt-4 space-y-4">
+                <p class="text-gray-500 text-center py-4">Your cart is empty</p>
+            </div>
+            <div class="mt-4 border-t pt-4">
+                <div class="flex justify-between">
+                    <span class="font-medium">Total:</span>
+                    <span id="cart-total" class="font-bold">R0.00</span>
+                </div>
+                <button class="mt-4 w-full bg-amber-600 text-white py-2 rounded-md hover:bg-amber-700 transition">Checkout</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hero-image flex items-center justify-center text-center">
+        <div class="px-4">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 fade-in">Exceptional Services</h1>
+            <p class="text-xl md:text-2xl text-white mb-8 fade-in delay-1">Enhancing your furniture experience beyond the purchase</p>
+        </div>
+    </div>
+
+    <!-- This is my services section here -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Premium Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We go beyond selling furniture to ensure your complete satisfaction</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md fade-in delay-1 card-hover">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80" alt="Interior Design" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">Interior Design Consultation</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Our expert designers will help you create the perfect space tailored to your style and needs.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Personalized space planning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Color scheme and material selection</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>3D room visualization</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="text-amber-600 hover:text-amber-700 font-medium">Book Consultation →</a>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md fade-in delay-2 card-hover">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="White Glove Delivery" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">White Glove Delivery</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Our premium delivery service ensures your furniture arrives safely and is set up exactly where you want it.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Careful in-home delivery</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Assembly and setup</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Packaging removal</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="text-amber-600 hover:text-amber-700 font-medium">Learn More →</a>
+                    </div>
+                </div>
+                
+                <!-- This is for the furniture protection -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md fade-in delay-3 card-hover">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80" alt="Furniture Protection" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">Furniture Protection</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Protect your investment with our comprehensive furniture care and maintenance plans.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Extended warranties available</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Professional cleaning services</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Repair and restoration services</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="text-amber-600 hover:text-amber-700 font-medium">Get Protected →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 bg-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">How Our Services Work</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Simple steps to transform your space with our expert services</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center fade-in delay-1">
+                    <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-amber-600 text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Consultation</h3>
+                    <p class="text-gray-600">Book a free initial consultation to discuss your needs and preferences.</p>
+                </div>
+                
+                <div class="text-center fade-in delay-2">
+                    <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-amber-600 text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Planning</h3>
+                    <p class="text-gray-600">We create a customized plan tailored to your space and style.</p>
+                </div>
+                
+                <div class="text-center fade-in delay-3">
+                    <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-amber-600 text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Implementation</h3>
+                    <p class="text-gray-600">Our team handles everything from delivery to final setup.</p>
+                </div>
+                
+                <div class="text-center fade-in delay-4">
+                    <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-amber-600 text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Enjoy</h3>
+                    <p class="text-gray-600">Relax and enjoy your beautifully designed space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- This is the testimonials section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied clients</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in delay-1">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The interior design consultation completely transformed my living room. Even now I'm still saying wow!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
+                            <i class="fas fa-user text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah T.</h4>
+                            <p class="text-gray-500 text-sm">Pretoria</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in delay-2">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The delivery service was worth every penny. I have zero regrets"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
+                            <i class="fas fa-user text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Nsovo K.</h4>
+                            <p class="text-gray-500 text-sm">Malamulele</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in delay-3">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"When my sofa got damaged, the protection plan made the repair process so easy. They even came to my house!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
+                            <i class="fas fa-user text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Nomvula M.</h4>
+                            <p class="text-gray-500 text-sm">Hatfield</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Here is my CTA section -->
+    <section class="py-16 bg-amber-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Ready to Transform Your Space?</h2>
+            <p class="text-amber-100 mb-8 max-w-2xl mx-auto">Our team is ready to help you create the perfect home environment with our premium furniture and services.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="contact.html" class="bg-white text-amber-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition inline-block">Get Started</a>
+                <a href="tel:+27679396151" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-amber-600 font-bold py-3 px-8 rounded-full text-lg transition inline-block">
+                    <i class="fas fa-phone mr-2"></i> Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Here is my footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">KgaugeloLiving</h3>
+                    <p class="text-gray-400">Premium furniture for modern lifestyles. Quality craftsmanship meets contemporary design.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="shop.html#living-room" class="text-gray-400 hover:text-white transition">Living Room</a></li>
+                        <li><a href="shop.html#bedroom" class="text-gray-400 hover:text-white transition">Bedroom</a></li>
+                        <li><a href="shop.html#dining-room" class="text-gray-400 hover:text-white transition">Dining Room</a></li>
+                        <li><a href="shop.html#office" class="text-gray-400 hover:text-white transition">Office</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Interior Design</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">White Glove Delivery</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Furniture Protection</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <p class="text-gray-400">Subscribe to our newsletter</p>
+                    <div class="mt-2 flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-700 text-white rounded-l focus:outline-none w-full">
+                        <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-r transition">→</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 KgaugeloLiving. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Shipping Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
